@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/yit8fla.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@300;400&family=Righteous&family=Roboto:ital,wght@1,300&family=Sometype+Mono:ital,wght@1,500&family=Space+Mono:ital@1&family=Ysabeau+SC:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="back"> BACK</a>
+        <a href="#" class="next"> NEXT</a>
+    </div>
+    <div class="box">
+        <div class="position">
+            <h3 class="textposition2"> are you feeling a lil</h3>
+            <h1 class="textposition" id="audioToggle" onclick="toggleAudio('path/to/is-it-true.mp3')"> WOOZY? </h1>
+        </div>
+    </div>
+    <div class="tame">
+        <h3> here are some good Tame Impala songs to ease your brain...</h3>
+    </div>
+    <div class="up">
+
+        <div class="gah">
+            <img src="J.png">
+        </div>
+    <div class="page1" onclick="toggleAudio('Tame Impala - Is It True (Official Video) copy.mp3')">
+        <h1 id="text-position"> IS IT TRUE</h1>
+    </div>
+    <div class="page2">
+        <img class="imgsize" src="eye2.png"> 
+        <h1 class="feels" id="feels1" onclick="toggleAudio('Tame Impala - Feels Like We Only Go Backwards (Official Video) (1).mp3')"> FEELS LIKE</h1>
+        <h1 class="feels2" id="feels2" onclick="toggleAudio('Tame Impala - Feels Like We Only Go Backwards (Official Video) (1).mp3')">WE ONLY</h1> 
+        <img class="imgsize" id="imgposition" src="eye.png">
+        <img class="imgsize" id="imgposition2" src="eye2.png"> 
+        <h1 class="feels3" id="feels3" onclick="toggleAudio('Tame Impala - Feels Like We Only Go Backwards (Official Video) (1).mp3')">GO BACKWARDS</h1>
+    </div>
+
+    <div class="box2" onclick="toggleAudio('cuz im the man.mp3')">
+        <h1 id="man">'Cause I'm A Man</h1>
+    </div>
+</div>
+<script>
+    var audio = new Audio();
+
+    function toggleAudio(songPath) {
+        if (audio.paused || audio.src !== songPath) {
+            audio.src = songPath;
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }
+
+    // Add an event listener to each element with the "feels" class to handle double-click
+    document.querySelectorAll('.feels').forEach(function(element) {
+        var clicks = 0;
+        element.addEventListener('click', function() {
+            clicks++;
+            if (clicks === 2) {
+                audio.pause();
+                clicks = 0;
+            }
+        });
+    });
+
+    // Add an event listener to each element with the "feels2" class to handle double-click
+    document.querySelectorAll('.feels2').forEach(function(element) {
+        var clicks = 0;
+        element.addEventListener('click', function() {
+            clicks++;
+            if (clicks === 2) {
+                audio.pause();
+                clicks = 0;
+            }
+        });
+    });
+
+    // Add an event listener to the "man" element to handle double-click
+    document.getElementById('man').addEventListener('click', function() {
+        var clicks = 0;
+        clicks++;
+        if (clicks === 2) {
+            audio.pause();
+            clicks = 0;
+        }
+    });
+</script>
+</body>
+</html>

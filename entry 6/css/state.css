@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(255, 255, 255);
+    animation-duration: 40s;
+}
+a{
+    font-size: 3em;
+}
+a:hover{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4em;
+}
+.position{
+    position: relative;
+    left: 30%;
+    width: 50%;
+    height:50%
+}
+.position:hover{
+    color: black;
+    border-radius: 50%;
+}
+.rectangle{
+    width:400px;
+    height:400px;
+    margin:10%;
+    background-image: linear-gradient(rgb(59, 48, 210), rgb(38, 136, 222));
+    display: block;
+}
+
+.rectangle:hover{
+    border-radius: 50%;
+    background-image: linear-gradient(pink, red);
+}
+@keyframes bgcolor-time-change{
+    0% []
+}
